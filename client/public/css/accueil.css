@@ -1,0 +1,138 @@
+body {
+    min-height: 100vh ;
+    background-image: url(../images/qg_mib.png);
+    background-position: center;
+    background-size: cover;
+    background-color: rgb(36, 71, 71);
+    background-repeat: no-repeat;
+}
+
+section {
+    display: flex;
+    width: 100%;
+    height: calc( 100vh - var(--header-size));
+    justify-content: center;
+    align-items: center;
+    
+}
+
+main {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+}
+main a,
+main input[type="submit"],
+main input[type="button"]  {
+    border: none;
+    background-color: white;
+    border-radius: 3px;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    width: 250px;
+    height: 30px;
+    align-items: center;
+    margin: 5px 0;
+    transition: .25s;
+}
+
+main input[type="text"] {
+
+    font-size: 15px;
+    width: 250px;
+    height: 20px;
+    padding: 5px 0; 
+    margin: 5px 0;
+}
+
+main * {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main form {
+    color: white;
+    background-color: var(--background-color);
+    border-radius: 5px;
+    margin-top: 15px;
+    padding-bottom: 15px; 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main a:hover,
+main input[type="submit"]:hover,
+main input[type="button"]:hover {
+    width: 275px;
+    background-color: rgb(193, 193, 193);
+
+}
+
+main .title strong {
+    background-color: black;
+    color: white;
+    padding: 3px;
+}
+
+main .title {
+    padding: 3px 0;
+    padding-right: 3px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+main form ul {
+    margin: 5px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 30px);
+    align-items: start;
+}
+main form ul li {
+    margin: 0;
+    width: 100%;
+}
+main form ul label {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+main form ul label img {
+    aspect-ratio: 1;
+    width: 35px;
+    margin: 5px;
+}
+
+main form ul li input {
+    display: none;
+}
+
+main form>label {
+    margin: 15px;
+}
+
+main form ul li input ~ label {
+    background-color: #00000088;
+    cursor: pointer;
+}
+
+main form ul li input:checked ~ label {
+    background-color: #ffffff5a;
+}
+

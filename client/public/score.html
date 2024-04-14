@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau des scores</title>
+    <link rel="stylesheet" href="./css/root.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="./css/score.css">
+    <link rel="shortcut icon" href="images/player0.png" type="image/x-icon">
+
+
+
+
+    <script defer>
+        fetch('/api/scores')
+            .then(response => response.json())
+            .then(data => showScores(data));
+
+        function showScores(scores) {
+        
+            scores.sort((a, b) => b.score - a.score);
+            scores.splice(10);
+            const scoreList = document.querySelector('.globalScore');
+            scoreList.innerHTML = '';
+            let cpt = 1;
+            for (const score of scores) {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td>${cpt}</td><td>${score.name}</td><td>${score.score}</td>`;
+                scoreList.appendChild(tr);
+                cpt++;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h2>SIB</h2>
+        <nav>
+            <a href="accueil.html">Jouer</a>
+            <a href="score.html">Scores</a>
+            <a href="credit.html">Credits</a>
+        </nav>
+    </header>
+
+    <section>
+        <main>
+            <h2>Tableau des scores</h2>
+            <table>
+                <caption>Global Scores</caption>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Pseudo</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody class="globalScore">
+        
+                </tbody>
+            </table>
+        </main>
+    </section>
+    
+</body>
+
+</html>

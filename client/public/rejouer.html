@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vous etes mort !</title>
+    <link rel="shortcut icon" href="images/player0.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/rejouer.css">
+    <link rel="stylesheet" href="css/header.css">
+
+    <script>
+        if (name !== undefined && name !== null && name !== "") {
+            document.querySelector('username').innerHTML = name
+        }
+        console.log(sessionStorage.getItem('name'));
+
+        fetch(`/api/scores/${name}`)
+            .then(response => response.json())
+            .then(data => showScores(data));
+
+        function showScores(scores) {
+        
+            const myScore = scores.sort((a, b) => b.score - a.score).find(scores == scores);
+            const myScoreHTML = document.querySelector('.myScore');
+            myScoreHTML.innerHTML = myScore;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h2>SIB</h2>
+        <nav>
+            <a href="accueil.html">Jouer</a>
+            <a href="score.html">Scores</a>
+            <a href="credit.html">Credits</a>
+        </nav>
+    </header>
+    <section>
+        <h1>Vous etes mort !</h1>
+        <a href="./score.html">Scores</a>
+        <a href="./accueil.html">Retour au menu principal</a>
+    </section>
+</body>
+</html>

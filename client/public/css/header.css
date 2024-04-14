@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    height: var(--header-size);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+
+    color: white;
+    background-color: var(--background-color)
+}
+
+header>nav {
+    display: flex;
+    flex-direction: row;
+    height: var(--header-size);
+}
+
+header>nav>a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    height: var(--header-size);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+header>nav>a:hover {
+    background-color: var(--background-color);
+}

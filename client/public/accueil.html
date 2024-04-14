@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIB | Accueil</title>
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/accueil.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="shortcut icon" href="images/player0.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <h2>SIB</h2>
+        <nav>
+            <a href="accueil.html">Jouer</a>
+            <a href="score.html">Scores</a>
+            <a href="credit.html">Credits</a>
+        </nav>
+    </header>
+    <section>
+
+
+        <main>
+            <h1 class="title"><strong>SIB</strong> Shoot In Black</h1>
+            <form action="jeu.html">
+                <label for="username">Pseudo</label>
+                <input type="text" name="username">
+
+                <label for="username">Skin</label>
+                <ul class="skinSelector">
+                    <li>
+                        <input type="radio" name="skin" value="player0.png" checked>
+                        <label for="skin">
+                            <img src="./images/player0.png" alt="Sapphire">
+                            <label for="skin">Sapphire</label>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="skin" value="player1.png">
+                        <label for="skin">
+                            <img src="./images/player1.png" alt="Sapphire">
+                            <label for="skin">Emeraude</label>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="skin" value="player2.png">
+                        <label for="skin">
+                            <img src="./images/player2.png" alt="Sapphire">
+                            <label for="skin">Amethys</label>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="radio" name="skin" value="player3.png">
+                        <label for="skin">
+                            <img src="./images/player3.png" alt="Sapphire">
+                            <label for="skin">Topaz</label>
+                        </label>
+                    </li>
+                </ul>
+
+                <input type="submit" value="Jouer">
+                <input type="button" onclick="window.close();" value="Quitter">
+            </form>
+        </main>
+    </section>
+
+    <script>
+        document.querySelectorAll('.skinSelector li').forEach(li => {
+            li.addEventListener('click', () => {
+                const radioButton = li.querySelector('input[type="radio"]');
+                if (radioButton) {
+                    radioButton.checked = true;
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

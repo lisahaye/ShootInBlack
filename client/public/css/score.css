@@ -1,0 +1,40 @@
+section {
+    height: calc(100vh - var(--header-size) - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+main {
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    text-align: center;
+    margin: 15px;
+    padding: 15px;
+    background-color: var(--background-color);
+}
+main * {
+    color: white;
+}
+
+main>*:last-child {
+    margin-bottom: 0;
+}
+
+table {
+    border-spacing: 10px;
+    background-color: var(--background-color);
+    border-radius: 5px;
+}
+
+table thead td {
+    font-weight: bold;
+    border-bottom: 1px rgb(255, 255, 255) solid;
+}
+html {
+    height: 100vh;
+    background-image: url(../images/e.jpeg);
+    background-size:cover ;
+    background-position: center ;
+} 
